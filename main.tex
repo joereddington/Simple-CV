@@ -1,41 +1,46 @@
+\documentclass[11pt,a4paper]{article}
 
-\documentclass[letterpaper,11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{fontawesome5}
+\usepackage{hyperref}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{parskip}
+\usepackage{xcolor}
 
-% Choose bibliography style for formatting list of publications
-\usepackage[style=ieee,url=false,doi=false,maxbibnames=99,sorting=ydnt,dashed=false]{biblatex}
-\bibliography{papers}
+% Define color and fonts
+\definecolor{myblue}{RGB}{36, 82, 139}
+\hypersetup{
+    colorlinks=true,
+    urlcolor=myblue
+}
 
-% Choose theme, e.g. black, RedViolet, ForestGreen, MidnightBlue, Blue
-\def\theme{MidnightBlue}
+\titleformat{\section}{\large\bfseries\color{myblue}}{}{0em}{}[\titlerule]
 
-\usepackage{simplecv}
-
-\boldname{Cetin}{Doruk}{D.}
+% Custom commands
+\newcommand{\contactInfo}{
+    \faEnvelope\ \href{mailto:joe@joereddington.com}{joe@joereddington.com} \\
+    \faGlobe\ \href{https://joereddington.com}{joereddington.com} \\
+    \faGithub\ \href{https://github.com/joereddington}{github.com/joereddington}
+}
 
 \begin{document}
 
-% Heading
-\headinginline{Dr Joe Reddington}{
-    \faEnvelope: \email{joe@joereddington.com} \\
-    \faGlobe: \website{joereddington.com} \\
-    % \faLinkedin: \linkedin{doruk-cetin} 
-    \faGithub: \github{joereddington}
-}
+\begin{center}
+    {\LARGE \textbf{Dr Joe Reddington}}\\[1mm]
+    \contactInfo
+\end{center}
 
-% \headingphoto{Doruk Çetin}{
-%     Website: \website{dcetin.me} \\ 
-%     Email: \email{dcetin@ethz.ch} \\
-%     % LinkedIn: \linkedin{doruk-cetin} \\
-%     GitHub: \github{dcetin}
-% }{photo.png}
+\vspace{1em}
 
-% Page One
-\import{sections/}{education.tex}
-\import{sections/}{experience.tex}
-\import{sections/}{publications.tex}
+\section*{Profile}
+Experienced lecturer and researcher in Information Security and Computer Science, with a strong track record of pedagogical innovation, outreach, and award-winning teaching. Proven success in improving student outcomes, curriculum development, and public engagement through impactful educational interventions.
 
-% Page Two
-\import{sections/}{teaching.tex}
-\import{sections/}{awards.tex}
+\input{sections/education}
+\input{sections/experience}
+\input{sections/publications}
+\input{sections/teaching}
+\input{sections/awards}
 
 \end{document}
+
